@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+vars:
+  GREETING: Hello, world!
+
+tasks:
+  default:
+    desc: Print a greeting message
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+  basics:
+    desc: secruity basics
+    cmds:
+      - sudo apt update && sudo apt upgrade -y
+      - sudo ufw allow ssh
+      - sudo ufw enable
+  ensure-owner:
+    cmds:
+      - sudo mkdir -p /mnt/server-storage/nextcloud-data
+      - sudo chown -R 33:33 /mnt/server-storage/nextcloud-data
+      - sudo chmod -R u=rwX,g=rX,o= /mnt/server-storage/nextcloud-data
+  docker-shell:
+    cmds:
+      - docker exec -u www-data -it nextcloud-app bash    
+
