@@ -7,7 +7,7 @@
 .Spotlight-V100
 .Trashes
 Thumbs.db
-
+.csm*
 .vscode/
 !.vscode/settings.json
 !.vscode/extensions.json
@@ -25,6 +25,9 @@ Thumbs.db
 .env
 .env.*
 !.env.example
+.pwd
+
+plex/config/
 
 *.pem
 *.key

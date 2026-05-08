@@ -1,0 +1,15 @@
+services:
+  plex:
+    image: plexinc/pms-docker:latest
+    container_name: plex
+    network_mode: host
+    environment:
+      - PLEX_CLAIM=${PLEX_CLAIM}        # Get from https://www.plex.tv/claim (expires in 4 min)
+      - ADVERTISE_IP=http://192.168.178.20:32400/  # Replace with your machine's LAN IP
+      - PLEX_UID=1000                   # Your user ID (run: id -u)
+      - PLEX_GID=1000                   # Your group ID (run: id -g)
+    volumes:
+      - ./config:/config                # Plex config & database
+      - ./transcode:/transcode          # Temp transcoding space
+      - /mnt/server-storage/media:/media:ro   # Your media — replace this path
+    restart: unless-stopped
