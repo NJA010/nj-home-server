@@ -18,6 +18,11 @@ Thumbs.db
 *.swp
 *.swo
 *~
+# jellyfin
+
+jellyfin/cache/
+jellyfin/config/
+qbittorrent/config/
 
 # =========================
 # Environment & secrets

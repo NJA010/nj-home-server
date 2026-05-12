@@ -1,0 +1,13 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    network_mode: host
+    environment:
+      - JELLYFIN_PublishedServerUrl=http://192.168.178.20:8096  # Your LAN IP
+    user: "1000:1000"                                            # Same UID:GID as your Plex setup
+    volumes:
+      - ./config:/config                # Jellyfin config & database
+      - ./cache:/cache                  # Replaces Plex's transcode dir
+      - /mnt/server-storage/media:/media:ro   # Same media mount as Plex
+    restart: unless-stopped
