@@ -25,4 +25,15 @@ tasks:
   docker-shell:
     cmds:
       - docker exec -u www-data -it nextcloud-app bash    
-
+  start_qbittorrent:
+    cmds: 
+      - cd qbittorrent; docker compose up
+  start_arr:
+    cmds:
+      - cd arr; docker compose up
+  start_nextcloud:
+    cmds:
+      - cd nextcloud; docker compose up
+  start_jellyfin:
+    cmds:
+      - cd jellyfin; docker compose up

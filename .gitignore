@@ -19,10 +19,16 @@ Thumbs.db
 *.swo
 *~
 # jellyfin
-
 jellyfin/cache/
 jellyfin/config/
 qbittorrent/config/
+
+# arr
+arr/prowlarr/config/
+arr/sonarr/config/
+arr/radarr/config/
+arr/bazarr/config/
+arr/sabnzbd/config/
 
 # =========================
 # Environment & secrets
