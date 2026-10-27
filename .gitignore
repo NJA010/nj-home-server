@@ -29,6 +29,7 @@ arr/sonarr/config/
 arr/radarr/config/
 arr/bazarr/config/
 arr/sabnzbd/config/
+arr/seerr/config/
 
 # =========================
 # Environment & secrets
